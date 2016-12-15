@@ -1,3 +1,5 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
 var ProductSelection = React.createClass({
 
   // sets initial state
@@ -128,12 +130,12 @@ var companies = [
   {"name": "Spain"}, {"name": "Poland"}, {"name": "Haiti"}
 ];
 
-ReactDOM.render(
-  <ProductSelection items = { products } />,
-  document.getElementById('product-container')
-);
+//ReactDOM.render(
+//  <ProductSelection items = { products } />,
+//  document.getElementById('product-container')
+//);
 
-ReactDOM.render(
+React.render(
   <CompanySearch items={ companies } />,
   document.getElementById('company-container')
 );

@@ -7,8 +7,9 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}"></script>
-  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}">
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
@@ -81,6 +82,7 @@
   </div>
 
   <div id="company-container"></div>
+
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
@@ -120,10 +122,10 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{{ url_for('static', filename='bower_components/react/react.js') }}"></script>
-  <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
   <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
   <script src="{{ url_for('static', filename='scripts/js/init.js') }}"></script>
-
+  <script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='bower_components/react/react.js') }}"></script>
+  <script src="{{ url_for('static', filename='bower_components/react/react-dom.js') }}"></script>
   </body>
 </html>
