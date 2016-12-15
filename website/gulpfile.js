@@ -5,13 +5,13 @@ var gulpBrowser = require("gulp-browser");
 var reactify = require('reactify');
 var del = require('del');
 var size = require('gulp-size');
-
-
+var babel = require("gulp-babel");
 // tasks
 
 gulp.task('transform', function () {
   var stream = gulp.src('./project/static/scripts/jsx/*.js')
-    .pipe(gulpBrowser.browserify({transform: ['reactify']}))
+    .pipe(babel())
+	.pipe(gulpBrowser.browserify({transform: ['reactify']}))
     .pipe(gulp.dest('./project/static/scripts/js/'))
     .pipe(size());
   return stream;
