@@ -12,3 +12,13 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.card-small {
+    width:  200px;
+    height: 150px;
+}
+
+.card-title {
+    position: relative;
+    text-align: center;
+}

@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RMAT from 'react-materialize';
 
+
+
 var ProductCards = React.createClass({
   // sets initial state
   getInitialState: function(){
@@ -16,13 +18,18 @@ var ProductCards = React.createClass({
   },
 
   render: function() {
-    //var products = this.props.items;
+    var products = this.props.items;
     //var productSelected = this.state.productSelected.trim().toLowerCase();
 
     return (
 		//<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
-		<p> hello </p>
-      )}
+ <div className="card small">
+    <div className="card-content">
+      <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
+    </div>
+  </div>
+            	
+            )}
 });
 
 //var ProductSelection = React.createClass({

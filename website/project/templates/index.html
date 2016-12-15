@@ -7,13 +7,15 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}">
   <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
-  <nav class="green darken-3" role="navigation">
-    <div class="nav-wrapper container"><i class="brand-logo material-icons"></i>
+  <nav class="green darken-1" role="navigation">
+    <div class="nav-wrapper container"><a href="."><i class="brand-logo material-icons">credit_card</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Research</a></li>
       </ul>
@@ -31,57 +33,29 @@
         <h5 class="header col s12 light">See what consumers are saying about their financial instituions.</h5>
       </div>
       <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light green darken-3">Get started</a>
+	    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light green darken-3">Get started</a>
       </div>
+
+
+<!-- 
+	<div id="prod-list"  style="display:none;" class="answer_list" > WELCOME</div>
+<input type="button" name="answer" value="Show Div" onclick="showDiv()" />	
+  <a href="#!" class="btn" onclick="Materialize.showStaggeredList('#prod-list')">Click Me</a>
+-->
       <br><br>
 
     </div>
   </div>
 
-
-<!--
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css" rel="stylesheet" />
+<div class="card hoverable small card-small blue-grey darken-2">
+  <div class="card-image">
+    <img src="../static/img/Credit card.png">
   </div>
--->
+  <span class="card-title">Card Title</span>
+  </div>
 
-  <div id="product-cards"></div>
+<div id="product-cards" ></div>
 
   <!--
   <footer class="page-footer orange">
@@ -131,3 +105,8 @@
   <script src="{{ url_for('static', filename='bower_components/react/react-dom.js') }}"></script>
   </body>
 </html>
+<script type="text/javascript">
+function showDiv() {
+   document.getElementById('prodDiv').style.display = "block";
+}
+</script>
