@@ -24376,15 +24376,28 @@ var ProductCards = _react2.default.createClass({
   },
 
   render: function render() {
-    //var products = this.props.items;
+    var products = this.props.items;
     //var productSelected = this.state.productSelected.trim().toLowerCase();
 
     return (
       //<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
       _react2.default.createElement(
-        'p',
-        null,
-        ' hello '
+        'div',
+        { className: 'card small' },
+        _react2.default.createElement(
+          'div',
+          { className: 'card-content' },
+          _react2.default.createElement(
+            'span',
+            { className: 'card-title activator grey-text text-darken-4' },
+            'Card Title',
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons right' },
+              'more_vert'
+            )
+          )
+        )
       )
     );
   }
