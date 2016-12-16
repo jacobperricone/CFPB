@@ -24,15 +24,25 @@
 }
 
 div.inline { 
-	float:left; 
+	float:left;
+    margin-left: 10px;
+    text-align: center;
     }
 
 .card {
 	border-radius: 20px;
-	width: 190px;
-	height: 260px;
+	width: 140px;
+	height: 160px;
 }
-.card-title {
+.card .card-title {
    text-align: center;
    vertical-align: middle;
+   font-size: 18px;
 }
+
+.card-image {
+   width: 50%; 
+   position: relative;
+   margin-left: 25%;
+}
+
