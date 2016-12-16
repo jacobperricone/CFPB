@@ -17,7 +17,7 @@ var ProductCards = React.createClass({
 
   ListItem: function(props) {  
     return (
-	<div className="card hoverable yellow darken-3 inline">
+	<div className="card hoverable black inline" id={props.value} onclick={"showDiv (this,  props.value})">
 	<div className="card-image">
 	<img src={"../../static/img/"+ props.value +".png"}></img>
 	</div>
@@ -176,12 +176,8 @@ var products = [
   {"key": 3, "name": "Credit reporting"},
   {"key": 4, "name": "Credit card"},
   {"key": 5, "name": "Bank account or service"},
-  {"key": 6, "name": "Consumer Loan"},
-  {"key": 7, "name": "Student loan"},
-  {"key": 8, "name": "Payday loan"},
-  {"key": 9, "name": "Money transfers"},
-  {"key": 10, "name": "Prepaid card"}
-];
+  {"key": 6, "name": "Consumer Loan"}
+  ];
 
 // const ProductCards = products.map((product)
 //   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
