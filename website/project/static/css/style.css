@@ -21,8 +21,23 @@
 .card-title {
     position: relative;
     /*text-align: center;*/
-    
-    line-height: 1em;
+    line-height: 1.5em;
+}
+
+.data {
+  width:85%;
+  right: 35%;
+  border-radius: 20px;
+
+}
+
+
+
+figure{
+  box-shadow: 10px 10px 5px #888888;
+
+  float: right;
+  width: 75%;
 }
 
 div.inline { 
@@ -34,12 +49,12 @@ div.inline {
 
 .card {
 	border-radius: 20px;
-	width: 148px;
-    float: right;
-	height: 158px;
-    right: 21%;
+	width: 140px;
+	height: 160px;
 }
-.card-title {
+.card .card-title {
+   text-align: left;
+   vertical-align: middle;
    font-size: 18px;
 }
 

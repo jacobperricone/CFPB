@@ -24377,7 +24377,7 @@ var ProductCards = _react2.default.createClass({
   ListItem: function ListItem(props) {
     return _react2.default.createElement(
       'div',
-      { className: 'card hoverable yellow darken-3 inline' },
+      { className: 'card hoverable black inline', id: props.value },
       _react2.default.createElement(
         'div',
         { className: 'card-image' },
@@ -24535,7 +24535,9 @@ var ProductCards = _react2.default.createClass({
 // list of companies, defined with JavaScript object literals
 
 
-var products = [{ "key": 1, "name": "Mortgage" }, { "key": 2, "name": "Debt collection" }, { "key": 3, "name": "Credit reporting" }, { "key": 4, "name": "Credit card" }, { "key": 5, "name": "Bank account or service" }, { "key": 6, "name": "Consumer Loan" }, { "key": 7, "name": "Student loan" }, { "key": 8, "name": "Payday loan" }, { "key": 9, "name": "Money transfers" }, { "key": 10, "name": "Prepaid card" }];
+var products = [{ "key": 1, "name": "Mortgage" }, { "key": 2, "name": "Debt collection" }, { "key": 3, "name": "Credit reporting" }, { "key": 4, "name": "Credit card" },
+// {"key": 5, "name": "Bank account or service"},
+{ "key": 6, "name": "Consumer Loan" }];
 
 // const ProductCards = products.map((product)
 //   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
