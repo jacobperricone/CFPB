@@ -20,13 +20,16 @@
 
 .card-title {
     position: relative;
-    text-align: center;
+    /*text-align: center;*/
+    
+    line-height: 1em;
 }
 
 div.inline { 
-	float:left;
-    margin-left: 10px;
-    text-align: center;
+	
+    margin-left: 15px;
+    
+    display: inline-block;
     }
 
 .card {
@@ -35,7 +38,7 @@ div.inline {
 	height: 160px;
 }
 .card .card-title {
-   text-align: center;
+   text-align: left;
    vertical-align: middle;
    font-size: 18px;
 }

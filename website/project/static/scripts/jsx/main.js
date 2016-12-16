@@ -21,20 +21,30 @@ var ProductCards = React.createClass({
     var products = this.props.items;
     //var productSelected = this.state.productSelected.trim().toLowerCase();
 
-    return (
-		//<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
- <div className="card small">
-    <div className="card-content">
-      <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
-    </div>
-  </div>
-            	
+  return (
+        <ul>
+          {this.props.items.map(function(listValue, i){
+            return <div key={i} className="card hoverable  blue-grey darken-1 inline">
+                  <div key={i} className="card-image">
+              </div>
+            <span key={i} className="card-title white-text"> {listValue.name}</span>
+            </div>
+                }
             )}
+        </ul>
+      )}
+
+		//<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
+
+            	
+          
 });
 
+
+
+
 //var ProductSelection = React.createClass({
-//
-//  // sets initial state
+// <img  key={i} src="../../static/img/" + {listValue.name} + '.png'>//  // sets initial state
 //  getInitialState: function(){
 //    return { productSelected: '' };
 //  },
@@ -145,13 +155,24 @@ var products = [
   {"name": "Debt collection"},
   {"name": "Credit reporting"},
   {"name": "Credit card"},
-  {"name": "Bank account or service"},
+  {"name": "Bank account"},
   {"name": "Consumer Loan"},
   {"name": "Student loan"},
   {"name": "Payday loan"},
   {"name": "Money transfers"},
   {"name": "Prepaid card"}
 ];
+
+
+// const ProductCards = products.map((product)
+//   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
+//       <div key = {product.name} className="card-image">
+//     <img  key = {product.name} src="../../static/img/" + {product.name} + '.png'>
+//   </div>
+// <span  key = {product.name} className="card-title white-text"> {product.name}</span>
+// </div>
+//     );
+
 //var companies = [
 //  {"name": "Sweden"}, {"name": "China"}, {"name": "Peru"}, {"name": "Czech Republic"},
 //  {"name": "Bolivia"}, {"name": "Latvia"}, {"name": "Samoa"}, {"name": "Armenia"},
@@ -162,9 +183,14 @@ var products = [
 //  {"name": "Spain"}, {"name": "Poland"}, {"name": "Haiti"}
 //];
 
+// ReactDOM.render(
+//   <ul> {ProductCards} </ul>,
+//   document.getElementById('product_cards')
+// );
+
 ReactDOM.render(
-  <ProductCards items = { products } />,
-  document.getElementById('product-cards')
+  <ProductCards products={products} />,
+  document.getElementById('product_cards')
 );
 
 //ReactDOM.render(

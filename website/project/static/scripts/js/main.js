@@ -24379,33 +24379,32 @@ var ProductCards = _react2.default.createClass({
     var products = this.props.items;
     //var productSelected = this.state.productSelected.trim().toLowerCase();
 
-    return (
-      //<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
-      _react2.default.createElement(
-        'div',
-        { className: 'card small' },
-        _react2.default.createElement(
+    return _react2.default.createElement(
+      'ul',
+      null,
+      this.props.items.map(function (listValue, i) {
+        return _react2.default.createElement(
           'div',
-          { className: 'card-content' },
+          { key: i, className: 'card hoverable  blue-grey darken-1 inline' },
+          _react2.default.createElement('div', { key: i, className: 'card-image' }),
           _react2.default.createElement(
             'span',
-            { className: 'card-title activator grey-text text-darken-4' },
-            'Card Title',
-            _react2.default.createElement(
-              'i',
-              { className: 'material-icons right' },
-              'more_vert'
-            )
+            { key: i, className: 'card-title white-text' },
+            ' ',
+            listValue.name
           )
-        )
-      )
+        );
+      })
     );
   }
+
+  //<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
+
+
 });
 
 //var ProductSelection = React.createClass({
-//
-//  // sets initial state
+// <img  key={i} src="../../static/img/" + {listValue.name} + '.png'>//  // sets initial state
 //  getInitialState: function(){
 //    return { productSelected: '' };
 //  },
@@ -24511,7 +24510,17 @@ var ProductCards = _react2.default.createClass({
 //});
 
 // list of companies, defined with JavaScript object literals
-var products = [{ "name": "Mortgage" }, { "name": "Debt collection" }, { "name": "Credit reporting" }, { "name": "Credit card" }, { "name": "Bank account or service" }, { "name": "Consumer Loan" }, { "name": "Student loan" }, { "name": "Payday loan" }, { "name": "Money transfers" }, { "name": "Prepaid card" }];
+var products = [{ "name": "Mortgage" }, { "name": "Debt collection" }, { "name": "Credit reporting" }, { "name": "Credit card" }, { "name": "Bank account" }, { "name": "Consumer Loan" }, { "name": "Student loan" }, { "name": "Payday loan" }, { "name": "Money transfers" }, { "name": "Prepaid card" }];
+
+// const ProductCards = products.map((product)
+//   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
+//       <div key = {product.name} className="card-image">
+//     <img  key = {product.name} src="../../static/img/" + {product.name} + '.png'>
+//   </div>
+// <span  key = {product.name} className="card-title white-text"> {product.name}</span>
+// </div>
+//     );
+
 //var companies = [
 //  {"name": "Sweden"}, {"name": "China"}, {"name": "Peru"}, {"name": "Czech Republic"},
 //  {"name": "Bolivia"}, {"name": "Latvia"}, {"name": "Samoa"}, {"name": "Armenia"},
@@ -24522,7 +24531,12 @@ var products = [{ "name": "Mortgage" }, { "name": "Debt collection" }, { "name":
 //  {"name": "Spain"}, {"name": "Poland"}, {"name": "Haiti"}
 //];
 
-_reactDom2.default.render(_react2.default.createElement(ProductCards, { items: products }), document.getElementById('product-cards'));
+// ReactDOM.render(
+//   <ul> {ProductCards} </ul>,
+//   document.getElementById('product_cards')
+// );
+
+_reactDom2.default.render(_react2.default.createElement(ProductCards, { products: products }), document.getElementById('product_cards'));
 
 //ReactDOM.render(
 //  <CompanySearch items={ companies } />,
