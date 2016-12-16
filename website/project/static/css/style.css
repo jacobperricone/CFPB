@@ -34,12 +34,12 @@ div.inline {
 
 .card {
 	border-radius: 20px;
-	width: 140px;
-	height: 160px;
+	width: 148px;
+    float: right;
+	height: 158px;
+    right: 15%;
 }
-.card .card-title {
-   text-align: left;
-   vertical-align: middle;
+.card-title {
    font-size: 18px;
 }
 

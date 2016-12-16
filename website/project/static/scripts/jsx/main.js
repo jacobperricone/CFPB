@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import RMAT from 'react-materialize';
 
 
-
 var ProductCards = React.createClass({
   // sets initial state
   getInitialState: function(){
@@ -14,35 +13,53 @@ var ProductCards = React.createClass({
   // sets state, triggers render method
   handleChange: function(event){
     this.setState({productSelected:event.target.value});
-    console.log("scope updated!");
   },
 
-  render: function() {
-    var products = this.props.items;
+  ListItem: function(props) {  
+    return (
+	<div className="card hoverable yellow darken-3 inline">
+	<div className="card-image">
+	<img src={"../../static/img/"+ props.value +".png"}></img>
+	</div>
+	<span className="card-title white-text">{props.value}</span>
+	</div>);
+  },
+
+  productList: function(props) {
+	  var products = this.props.products;
+      console.log(props);
+	  console.log(products);
+	  return (
+		<div>
+		  {products.map((product) =>
+			<this.ListItem key={product.key}
+					  value={product.name.toString()} />
+		  )}
+		</div>
+	  );
+	},
+
+  render: function(props) {
+    var products = this.props.products;
+    return (this.productList(products));
     //var productSelected = this.state.productSelected.trim().toLowerCase();
 
-  return (
-        <ul>
-          {this.props.items.map(function(listValue, i){
-            return <div key={i} className="card hoverable  blue-grey darken-1 inline">
-                  <div key={i} className="card-image">
-              </div>
-            <span key={i} className="card-title white-text"> {listValue.name}</span>
-            </div>
-                }
-            )}
-        </ul>
-      )}
-
-		//<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
-
-            	
-          
+    }
+  //return (
+  //      <ul>
+  //        {products.map(function(listValue, i){
+  //          return <div className="card hoverable  blue-grey darken-1 inline">
+  //                <div className="card-image">
+  //            </div>
+  //          <span key={i} className="card-title white-text"> {listValue.name}</span>
+  //          </div>
+  //              }
+  //          )}
+  //      </ul>
+  //    )}
 });
 
-
-
-
+      
 //var ProductSelection = React.createClass({
 // <img  key={i} src="../../static/img/" + {listValue.name} + '.png'>//  // sets initial state
 //  getInitialState: function(){
@@ -150,19 +167,21 @@ var ProductCards = React.createClass({
 //});
 
 // list of companies, defined with JavaScript object literals
-var products = [
-  {"name": "Mortgage"},
-  {"name": "Debt collection"},
-  {"name": "Credit reporting"},
-  {"name": "Credit card"},
-  {"name": "Bank account"},
-  {"name": "Consumer Loan"},
-  {"name": "Student loan"},
-  {"name": "Payday loan"},
-  {"name": "Money transfers"},
-  {"name": "Prepaid card"}
-];
 
+
+
+var products = [
+  {"key": 1, "name": "Mortgage"},
+  {"key": 2, "name": "Debt collection"},
+  {"key": 3, "name": "Credit reporting"},
+  {"key": 4, "name": "Credit card"},
+  {"key": 5, "name": "Bank account or service"},
+  {"key": 6, "name": "Consumer Loan"},
+  {"key": 7, "name": "Student loan"},
+  {"key": 8, "name": "Payday loan"},
+  {"key": 9, "name": "Money transfers"},
+  {"key": 10, "name": "Prepaid card"}
+];
 
 // const ProductCards = products.map((product)
 //   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
@@ -187,6 +206,7 @@ var products = [
 //   <ul> {ProductCards} </ul>,
 //   document.getElementById('product_cards')
 // );
+
 
 ReactDOM.render(
   <ProductCards products={products} />,

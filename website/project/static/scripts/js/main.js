@@ -24372,35 +24372,58 @@ var ProductCards = _react2.default.createClass({
   // sets state, triggers render method
   handleChange: function handleChange(event) {
     this.setState({ productSelected: event.target.value });
-    console.log("scope updated!");
   },
 
-  render: function render() {
-    var products = this.props.items;
-    //var productSelected = this.state.productSelected.trim().toLowerCase();
-
+  ListItem: function ListItem(props) {
     return _react2.default.createElement(
-      'ul',
+      'div',
+      { className: 'card hoverable yellow darken-3 inline' },
+      _react2.default.createElement(
+        'div',
+        { className: 'card-image' },
+        _react2.default.createElement('img', { src: "../../static/img/" + props.value + ".png" })
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'card-title white-text' },
+        props.value
+      )
+    );
+  },
+
+  productList: function productList(props) {
+    var _this = this;
+
+    var products = this.props.products;
+    console.log(props);
+    console.log(products);
+    return _react2.default.createElement(
+      'div',
       null,
-      this.props.items.map(function (listValue, i) {
-        return _react2.default.createElement(
-          'div',
-          { key: i, className: 'card hoverable  blue-grey darken-1 inline' },
-          _react2.default.createElement('div', { key: i, className: 'card-image' }),
-          _react2.default.createElement(
-            'span',
-            { key: i, className: 'card-title white-text' },
-            ' ',
-            listValue.name
-          )
-        );
+      products.map(function (product) {
+        return _react2.default.createElement(_this.ListItem, { key: product.key,
+          value: product.name.toString() });
       })
     );
+  },
+
+  render: function render(props) {
+    var products = this.props.products;
+    return this.productList(products);
+    //var productSelected = this.state.productSelected.trim().toLowerCase();
   }
-
-  //<Button node='a' waves='light'><Icon right>file_cloud</Icon>button</Button>
-
-
+  //return (
+  //      <ul>
+  //        {products.map(function(listValue, i){
+  //          return <div className="card hoverable  blue-grey darken-1 inline">
+  //                <div className="card-image">
+  //            </div>
+  //          <span key={i} className="card-title white-text"> {listValue.name}</span>
+  //          </div>
+  //              }
+  //          )}
+  //      </ul>
+  //    )}
 });
 
 //var ProductSelection = React.createClass({
@@ -24510,7 +24533,9 @@ var ProductCards = _react2.default.createClass({
 //});
 
 // list of companies, defined with JavaScript object literals
-var products = [{ "name": "Mortgage" }, { "name": "Debt collection" }, { "name": "Credit reporting" }, { "name": "Credit card" }, { "name": "Bank account" }, { "name": "Consumer Loan" }, { "name": "Student loan" }, { "name": "Payday loan" }, { "name": "Money transfers" }, { "name": "Prepaid card" }];
+
+
+var products = [{ "key": 1, "name": "Mortgage" }, { "key": 2, "name": "Debt collection" }, { "key": 3, "name": "Credit reporting" }, { "key": 4, "name": "Credit card" }, { "key": 5, "name": "Bank account or service" }, { "key": 6, "name": "Consumer Loan" }, { "key": 7, "name": "Student loan" }, { "key": 8, "name": "Payday loan" }, { "key": 9, "name": "Money transfers" }, { "key": 10, "name": "Prepaid card" }];
 
 // const ProductCards = products.map((product)
 //   <div key = {product.name} className="card hoverable  blue-grey darken-1 inline">
@@ -24535,6 +24560,7 @@ var products = [{ "name": "Mortgage" }, { "name": "Debt collection" }, { "name":
 //   <ul> {ProductCards} </ul>,
 //   document.getElementById('product_cards')
 // );
+
 
 _reactDom2.default.render(_react2.default.createElement(ProductCards, { products: products }), document.getElementById('product_cards'));
 
