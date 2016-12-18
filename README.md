@@ -6,6 +6,7 @@ You will need ```pip``` and ```npm``` installed. Inside of the website directory
 ```
 pip install -r requirements.txt
 npm install
+bower install
 ```
 
 To start the ```flask``` server, run:
